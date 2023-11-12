@@ -26,17 +26,59 @@ gmailButton.addEventListener('click', () => {
 const parentBlock = document.querySelector('.parent_block');
 const childBlock = document.querySelector('.child_block');
 
-const moveBlock = (position) => {
-    if (position <= 430) {
-        childBlock.style.left = `${position}px`;
-        setTimeout(() => {
-            moveBlock(position + 1);
-        }, 5);
+let positionX = 0;
+let positionY = 0;
+
+const moveBlock = () => {
+    if (positionX < 430 && positionY === 0){
+        positionX++;
+        childBlock.style.left = `${positionX}px`;
+        setTimeout(moveBlock, 1);
+    }else if (positionX >= 430 && positionY < 430) {
+        positionY++;
+        childBlock.style.top = `${positionY}px`;
+        setTimeout(moveBlock, 1);
+    }else if (positionX >= 0 && positionY >= 430){
+        positionX--;
+        childBlock.style.left = `${positionX}px`;
+        setTimeout(moveBlock, 1);
+    }else if (positionX <= 0 && positionY > 0){
+        positionY--;
+        childBlock.style.top = `${positionY}px`;
+        setTimeout(moveBlock, 1);
     }
 }
 
-moveBlock(0)
+moveBlock();
 
+//TIMER hw2
 
+let time = document.querySelector('#minutesS');
+const startTimerButton = document.querySelector('#start');
+const stopTimerButton = document.querySelector('#stop');
+const resetTimerButton = document.querySelector('#reset');
+
+let timerInterval;
+let isTimerRunning = false;
+
+startTimerButton.addEventListener('click', () => {
+    if (!isTimerRunning){
+        timerInterval = setInterval(() => {
+            time.innerText++
+        }, 1000);
+        isTimerRunning = true;
+    }
+})
+
+stopTimerButton.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+});
+
+resetTimerButton.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    time.innerText = 0;
+    isTimerRunning = false;
+});
 
 
