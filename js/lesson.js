@@ -64,7 +64,7 @@ tabsItemsParent.onclick = (event) => {
 };
 
 let index = 0;
-intervalId = setInterval(() => { // Начинаем интервал с нулевой вкладки
+intervalId = setInterval(() => { 
     index++;
     if (index > tabsItems.length - 1) {
         index = 0;
