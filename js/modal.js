@@ -67,3 +67,29 @@ counter = setTimeout(() => {
         openModal();
     }
 }, 10000);
+
+
+
+//POST DATA
+
+const formElement = document.querySelector('form');
+
+const postData = (form) => {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const  request = new XMLHttpRequest();
+        request.open("POST", "server.php");
+        request.setRequestHeader("Content-type", "application/json");
+
+        const formData = new FormData(form);
+        const obj = {};
+        formData.forEach((item, index) => {
+            obj[index] = item
+        })
+        const json = JSON.stringify(obj);
+        request.send(json)
+    })
+}
+
+postData(formElement)
