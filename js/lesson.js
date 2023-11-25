@@ -64,7 +64,9 @@ tabsItemsParent.onclick = (event) => {
 };
 
 let index = 0;
+
 intervalId = setInterval(() => {
+
     index++;
     if (index > tabsItems.length - 1) {
         index = 0;
@@ -72,6 +74,7 @@ intervalId = setInterval(() => {
     hideTabsContentCards();
     showTabsContentCards(index);
 }, 3000);
+
 
 
 //CONVERTOR

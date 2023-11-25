@@ -69,7 +69,6 @@ counter = setTimeout(() => {
 }, 10000);
 
 
-
 //POST DATA
 
 const formElement = document.querySelector('form');
