@@ -9,85 +9,102 @@
 <body>
 
 <div class="wrapper">
-    <div class="header">
-        <div class="container">
-            <div class="inner_header">
-                <a href="index.html">
-                    <div class="logotype">
-                        <h2>JavaScript</h2>
-                    </div>
-                </a>
-                <ul class="menu">
-                    <li class="menu_link">
-                        <a href="pages/home_works.html">Home Works</a>
-                    </li>
-                    <li class="menu_link">
-                        <a href="pages/lessons.html">Lessons</a>
-                    </li>
-                    <li class="menu_link">
-                        <a href="https://t.me/NurDinBuy16" target="_blank">Send hw</a>
-                    </li>
-                    <li class="menu_link">
-                        <a href="pages/characters.html" target="_blank">Bleach Characters</a>
-                    </li>
-                </ul>
-                <button class="btn" id="btn-get">Click me!</button>
-            </div>
-        </div>
-    </div>
     <div class="main_block">
         <div class="container">
+            <div class="header">
+                <div class="container">
+                    <div class="inner_header">
+                        <a href="index.html">
+                            <div class="logotype">Bleach</div>
+                            <div class="logotype filter">Bleach</div>
+                        </a>
+                        <ul class="menu">
+                            <li class="menu_link">
+                                <a href="pages/home_works.html">Бронь билетов</a>
+                            </li>
+                            <li class="menu_link">
+                                <a href="pages/lessons.html">Премьера</a>
+                            </li>
+                            <li class="menu_link">
+                                <a href="pages/characters.html" target="_blank">Персонажи</a>
+                            </li>
+                            <li class="menu_link">
+                                <a href="https://t.me/NurDinBuy16" target="_blank">Игра</a>
+                            </li>
+                        </ul>
+                        <button class="btn" id="btn-get">Купить билет</button>
+                    </div>
+                </div>
+            </div>
             <div class="inner_main">
-                <h1><strong id="js-color">JavaScript</strong> - на самом деле очень легко и просто!</h1>
+                <div class="title">
+                    <h1>Тысячелетняя <strong id="js-color">кровавая</strong> война</h1>
+                    <p class="description">В Каракуре, родном городе Ичиго Куросаки, начинают пропадать люди, а Общество душ фиксирует внезапный рост количества «пустых», уничтоженных в мире живых. Вскоре Ичиго предстоит вступить в битву с лидером квинси, который собирается уничтожить Общество душ.</p>
+                    <div class="title-buttons">
+                        <button class="btn title-button" id="modal">Купить билет</button>
+                        <button class="btn title-button">Смотреть трейлер</button>
+                    </div>
+                    <div class="block_video">
+                        <div class="container">
+                            <!-- <h3>Полезный ролик про Event Loop</h3> -->
+                            <div class="inner_block_video">
+                                <iframe class="styled-video" src="https://www.youtube.com/embed/bm1C1dpK1EI" title="YouTube video player" frameborder="2" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <span>Bleach</span>
+                                <p>Трейлер: Тысячелетная кровавая война</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="colors-buttons">
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
+                    <button class="btn-color"></button>
+                    <button class="btn-color"></button>
+                    <button class="btn-color"></button>
+                    <button class="btn-color"></button>
                 </div>
             </div>
         </div>
     </div>
     <div class="slider_block">
-        <div class="container">
-            <div class="inner_slider">
-                <div class="slider">
-                    <button class="btn-slide" id="prev">&lt;prev</button>
-                    <div class="slide active_slide">
-                        <div class="slide_card">
-                            <h3>regular expression</h3>
-                            <p>Простыми словами, регулярное выражение - это набор символов, который задает определенные правила для поиска и сопоставления текста. Вы можете использовать регулярные выражения, чтобы найти определенные строки в тексте, заменить части строки на другие значения или извлечь нужную информацию из текста.</p>
-                            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank">узнать подробнее</a>
-                        </div>
+        <div class="inner_slider">
+            <p class="slider-title">Лучшие вырезки из нового сезона <span>тысячелетней кровавой войны</span>.</p>
+            <button class="btn-slide" id="prev">&lt;</button>
+            <button class="btn-slide" id="next">&gt;</button>
+            <div class="slider">
+                <div class="slide active_slide" data-background="images/best-1-background.png">
+                    <div class="slide_card">
+                        <img src="images/best-1.png" alt="">
+                        <p>Лучшие вырезки из нового сезона тысячелетней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие </p>
                     </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3>recursion</h3>
-                            <p>Простыми словами, рекурсия - это, когда функция делает повторяющиеся вызовы самой себя для решения задачи, пока не достигнет определенного условия выхода из рекурсии.</p>
-                            <a href="https://learn.javascript.ru/recursion" target="_blank">узнать подробнее</a>
-                        </div>
+                </div>
+                <div class="slide" data-background="images/best-2-background.png">
+                    <div class="slide_card">
+                        <img src="images/best-2.png" alt="">
+                        <p>Лучшие вырезки из нового сезона тысячелетней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие </p>     
                     </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3>json</h3>
-                            <p>Простыми словами, JSON - это способ представления данных в виде текста, чтобы они могли быть легко поняты и использованы различными программами. Он использует простые правила для описания объектов и массивов, а также для представления простых типов данных, таких как строки, числа, логические значения и т.д.</p>
-                            <a href="https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON" target="_blank">узнать подробнее</a>
-                        </div>
+                </div>
+                <div class="slide" data-background="images/best-3-background.png">
+                    <div class="slide_card">
+                        <img src="images/best-3.png" alt="">
+                        <p>Лучшие вырезки из нового сезона тысячелетней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие </p>     
                     </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <h3>event loop</h3>
-                            <p>Простыми словами, event loop похож на дежурного, который непрерывно проверяет, произошло ли какое-либо событие, и реагирует на него, когда оно происходит. Он имеет список задач, которые нужно выполнить, и он перебирает этот список событий одно за другим, обрабатывая каждое событие, когда оно наступает.</p>
-                            <a href="https://highload.today/kak-ustroen-event-loop-v-javascript-parallelnaya-model-i-tsikl-sobytij/" target="_blank">узнать подробнее</a>
-                        </div>
+                </div>
+                <div class="slide" data-background="images/best-4-background.png">
+                    <div class="slide_card">
+                        <img src="images/best-4.png" alt="">
+                        <p>Лучшие вырезки из нового сезона тысячелетней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие </p>
                     </div>
-                    <button class="btn-slide" id="next">next&gt;</button>
+                </div>
+                <div class="slide" data-background="images/best-5-background.png">
+                    <div class="slide_card">
+                        <img src="images/best-5.png" alt="">
+                        <p>Лучшие вырезки из нового сезона тысячелетней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие вырезки из нового сезона тысячи летней кровавой войны.Лучшие </p>     
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>  
     </div>
 
-    <div class="botlle">
+    <!-- <div class="botlle">
         <div class="container">
             <div class="bottle_inner">
                 <a href="pages/monster.html">
@@ -99,16 +116,9 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="block_video">
-        <div class="container">
-            <h3>Полезный ролик про Event Loop</h3>
-            <div class="inner_block_video">
-                <iframe width="80%" height="450" src="https://www.youtube.com/embed/zDlg64fsQow" title="YouTube video player" frameborder="2" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    
 
     <div class="footer">
         <div class="container">

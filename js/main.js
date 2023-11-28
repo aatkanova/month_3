@@ -31,6 +31,7 @@ window.onkeydown = (event) => {
 
 // SLIDER BLOCK
 
+const sliderBlock = document.querySelector('.slider_block');
 const slides = document.querySelectorAll('.slide')
 const next = document.querySelector('#next')
 const prev = document.querySelector('#prev')
@@ -45,6 +46,8 @@ const hideSlide = () => {
 const showSlide = (i = 0) => {
     slides[i].style.opacity = 1
     slides[i].classList.add('active_slide')
+    const background = slides[i].getAttribute('data-background');
+    sliderBlock.style.backgroundImage = `url(${background})`;
 }
 
 hideSlide()

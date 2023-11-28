@@ -144,23 +144,45 @@ function setupCurrencyConverter() {
 setupCurrencyConverter();
 
 
-//CARD SWITCHER не доделан
+//CARD SWITCHER 
 
 const card = document.querySelector('.card'),
     btnPrev = document.querySelector("#btn-prev"),
-    btnNext = document.querySelector('#btn-next')
+    btnNext = document.querySelector('#btn-next');
 
-let count = 0;
+let count = 1;
 
-btnNext.onclick = () => {
-    count++;
+function loadData(count) {
     fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
         .then((response) => response.json())
         .then(data => {
             card.innerHTML = `
                 <p>${data.title}</p>
-                <p style = "color: ${data.completed ? "green" : "red" }">${data.completed}</p>
+                <p style="color: ${data.completed ? "green" : "red" }">${data.completed}</p>
                 <span>${data.id}</span>
-            `
+            `;
         })
+        .catch(error => console.error('Error fetching data:', error));
 }
+
+function updateCount(operation) {
+    if (operation === 'next') {
+        count = count < 200 ? count + 1 : 1;
+    } else if (operation === 'prev') {
+        count = count > 1 ? count - 1 : 200;
+    }
+    loadData(count);
+}
+
+btnNext.onclick = () => updateCount('next');
+
+btnPrev.onclick = () => updateCount('prev');
+
+loadData(count);
+
+
+//hw 6 part 2
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((data) => console.log(data))

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,29 +12,35 @@
 }
 
 body {
-    font-family: "Britannic Bold", sans-serif;
-    background: #c2d0d0;
+    font-family: 'Montserrat';
+    background: #000;
 }
 
 .btn {
-    width: 250px;
+    font-family: 'Montserrat';
+    width: 190px;
     height: 50px;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
-    border: 1px solid var(--orange);
-    background: black;
+    border: none;
+    /* border: 1px solid var(--orange); */
+    /* background: black; */
     color: var(--orange);
-    border-radius: 8px;
+    border-radius: 60px;
+    background: #D37015;
+    transition: 1s;
 }
 
 .btn:hover {
-    background: #414349;
+    background: #000000;
+    color: #D37015;
+    border: 1px solid #D37015;
 }
 
-.btn:active {
+/* .btn:active {
     background: #56585D;
     border: 2px solid var(--orange);
-}
+} */
 
 a {
     text-decoration: none;
@@ -43,12 +51,13 @@ li {
 }
 
 h1 {
-    text-align: center;
-    font-size: 70px;
+    /* text-align: center; */
+    font-size: 52px;
     color: white;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
+    width: 550px;
 }
 
 h2 {
@@ -77,7 +86,7 @@ h4 {
 }
 
 strong {
-    color: #F79300;
+    color: #D37015;
 }
 
 label {
@@ -100,25 +109,6 @@ input {
     font-size: 30px;
 }
 
-.btn-slide {
-    display: block;
-    width: 100px;
-    height: 100px;
-    background: var(--orange);
-    color: black;
-    font-size: 20px;
-    text-transform: uppercase;
-    border-radius: 50%;
-    font-weight: 800;
-    z-index: 1;
-}
-
-.btn-slide:hover {
-    background: #b68733 !important;
-    cursor: pointer;
-    color: white;
-}
-
 :root {
-    --orange: orange
+    --orange: #FFF
 }
