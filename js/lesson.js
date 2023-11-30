@@ -77,22 +77,18 @@ intervalId = setInterval(() => {
 
 
 
-//CONVERTOR
+//CONVERTER
 
-function setupCurrencyConverter() {
+async function setupCurrencyConverter() {
     const som = document.querySelector('#som');
     const usd = document.querySelector('#usd');
     const eur = document.querySelector('#eur');
 
-    const request = new XMLHttpRequest();
-    request.open("GET", "../data/convertor.json");
-    request.setRequestHeader("Content-type", "application/json");
-    request.send();
-
-    request.onload = () => {
-        const response = JSON.parse(request.response);
-        const usdExchangeRate = response.usd;
-        const eurExchangeRate = response.eur;
+    try {
+        const response = await fetch("../data/convertor.json");
+        const data = await response.json();
+        const usdExchangeRate = data.usd;
+        const eurExchangeRate = data.eur;
 
         function updateSomValue(inputValue) {
             if (!isNaN(inputValue)) {
@@ -138,10 +134,14 @@ function setupCurrencyConverter() {
             const inputValue = parseFloat(eur.value);
             updateEurValue(inputValue);
         };
-    };
+    } catch (error) {
+        console.log('Fetch error:', error);
+    }
 }
 
 setupCurrencyConverter();
+
+
 
 
 //CARD SWITCHER 
@@ -152,17 +152,19 @@ const card = document.querySelector('.card'),
 
 let count = 1;
 
-function loadData(count) {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
-        .then((response) => response.json())
-        .then(data => {
-            card.innerHTML = `
-                <p>${data.title}</p>
-                <p style="color: ${data.completed ? "green" : "red" }">${data.completed}</p>
-                <span>${data.id}</span>
-            `;
-        })
-        .catch(error => console.error('Error fetching data:', error));
+async function loadData(count) {
+    try{
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`);
+        const data = await response.json();
+        card.innerHTML = `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? "green" : "red" }">${data.completed}</p>
+            <span>${data.id}</span>
+        `
+    }
+    catch(e){
+        console.log('Fetch error:', error);
+    }
 }
 
 function updateCount(operation) {
@@ -183,6 +185,39 @@ loadData(count);
 
 //hw 6 part 2
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then((response) => response.json())
-    .then((data) => console.log(data))
+async function asyncLoadPosts() {
+    try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const data = await response.json()
+        console.log(data);
+    }
+    catch(e){
+        console.log('Fetch error:', error);
+    }
+}
+
+asyncLoadPosts()
+
+
+
+//SEARCH WEATHER
+
+const cityNameInput = document.querySelector('.cityName'),
+    city = document.querySelector('.city'),
+    temp = document.querySelector('.temp')
+
+    const WEATHER_API = 'http://api.openweathermap.org/data/2.5/weather';
+    const API_KEY = 'e417df62e04d3b1b111abeab19cea714';
+
+    cityNameInput.oninput = async(event) => {
+        try{
+            const response = await fetch(`${WEATHER_API}?q=${event.target.value}&appid=${API_KEY}`)
+            const data = await response.json()
+            city.innerHTML = data?.name ? data?.name : "city is not found";
+            temp.innerHTML = data?.main?.temp ?  Math.round(data?.main?.temp - 273) + '&deg;C' : "...";
+        }
+        catch(e){
+            console.log('Fetch error:', error);
+        } 
+    }
+

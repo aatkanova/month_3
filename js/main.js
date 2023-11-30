@@ -43,12 +43,21 @@ const hideSlide = () => {
         slide.classList.remove('active_slide')
     })
 }
+
 const showSlide = (i = 0) => {
-    slides[i].style.opacity = 1
-    slides[i].classList.add('active_slide')
+    slides[i].style.opacity = 1;
+    slides[i].classList.add('active_slide');
     const background = slides[i].getAttribute('data-background');
     sliderBlock.style.backgroundImage = `url(${background})`;
-}
+
+    const sliderTitle = document.querySelector('.slider-title span');
+    const colors = ['#D479FF', '#E02A2A', '#30D0D3', '#D479FF', '#D37015']; 
+    const color = colors[i]; 
+    sliderTitle.style.color = color; 
+    prev.style.backgroundColor = color;
+    next.style.backgroundColor = color;
+};
+
 
 hideSlide()
 showSlide(index)
